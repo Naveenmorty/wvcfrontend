@@ -1,0 +1,208 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200;300;400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap');
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F1F1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(25, 27, 35, 0.30);
+  border-radius: 6px;
+  /* border: 3px solid rgba(25, 27, 35, 0.30); */
+}
+
+body {
+  margin: 0;
+  font-family: 'Hanken Grotesk', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+  font-weight: 400;
+  color: #17191F;
+  background-color: #F4F5F7 !important;
+  /* overflow-x: hidden; */
+}
+
+code {
+  font-family: 'Hanken Grotesk', sans-serif;
+}
+
+
+/* index table */
+.withoutPagination .MuiDataGrid-footerContainer {
+  display: none;
+}
+
+.MuiDataGrid-root .MuiDataGrid-columnHeader:focus,
+.MuiDataGrid-root .MuiDataGrid-cell:focus {
+  outline: none !important;
+}
+
+.dataTable-css .MuiDataGrid-withBorderColor {
+  border: 0 !important;
+}
+
+.dataTable-css .MuiDataGrid-row:nth-child(odd) {
+  background-color: #fff;
+}
+
+.dataTable-css .MuiDataGrid-row:nth-child(even) {
+  background-color: #F4F5F7;
+}
+
+.dataTable-css .MuiDataGrid-columnHeaders {
+  border-bottom: 1px solid #5F85C5 !important;
+  background: #E7EDF6;
+}
+.dataTable-css .MuiDataGrid-row.Mui-selected
+{
+  color: #17191F;
+  background-color: #D2D3D6 !important;
+}
+.MuiDataGrid-cellContent
+{
+  color: #65676B;
+}
+.dataTable-css .MuiDataGrid-row.Mui-selected .MuiDataGrid-cellContent
+{
+  color: #17191F;
+}
+
+/* circle charts */
+.apexcharts-legend-series {
+  display: flex;
+  align-items: center;
+}
+
+/* .apexcharts-legend-text {
+  color: #17191f !important;
+} */
+
+.apexcharts-legend {
+  justify-content: center !important;
+  gap: 10px;
+  margin-top: -22px;
+}
+
+/* .dataTable-css .MuiDataGrid-row:hover,
+.dataTable-css .MuiDataGrid-row.Mui-hovered,
+.dataTable-css .MuiDataGrid-row.Mui-selected:hover,
+.dataTable-css .MuiDataGrid-row.Mui-selected.Mui-hovered,
+.dataTable-css .MuiDataGrid-row.Mui-selected
+{
+  background-color: initial !important;
+} */
+
+
+/* .dataTable-css .MuiPagination-ul li:first-child::before {
+  content: 'Previous';
+  color: #17191F;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dataTable-css .MuiPagination-ul li:last-child::before {
+  content: 'Next';
+  color: #17191F;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 10px;
+} */
+
+.dataTable-css .MuiPagination-ul li:first-child .MuiPaginationItem-root,
+.dataTable-css .MuiPagination-ul li:last-child .MuiPaginationItem-root {
+  background-color: transparent;
+}
+
+.dataTable-css .MuiPagination-ul .Mui-selected {
+  background-color: #17191F !important;
+  color: #ffff !important;
+}
+
+.dataTable-css .MuiPagination-ul .MuiPaginationItem-root {
+  border-radius: 2px;
+  color: #65676B;
+  background-color: #F4F5F7;
+  width: 24px;
+  height: 24px;
+  min-width: auto;
+}
+
+.dataTable-css .MuiPagination-ul .MuiPaginationItem-ellipsis {
+  background-color: transparent;
+}
+
+.dataTable-css .MuiDataGrid-footerContainer {
+  background-color: #fff;
+}
+.dataTable-css .MuiPagination-ul li:first-child .MuiPaginationItem-root,
+.dataTable-css .MuiPagination-ul li:last-child .MuiPaginationItem-root
+{
+width: auto;
+color: #17191F;
+font-weight: 600;
+}
+
+.sortable-column .MuiDataGrid-columnHeaderTitleContainer{
+justify-content: space-between;
+}
+
+#chart
+{
+  height: 90%;
+}
+#chart [type="donut"],#chart [type="area"]
+{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.Donor_Chart .apexcharts-legend
+{
+  gap: 30px;
+}
+.Donor_Chart .apexcharts-legend .apexcharts-legend-series .apexcharts-legend-marker
+{
+display: none;
+}
+.Donor_Chart .apexcharts-legend .apexcharts-legend-series:first-child .apexcharts-legend-text
+{
+  position: relative;
+    width: 115px;
+    justify-content: end;
+    display: flex;
+}
+.Donor_Chart .apexcharts-legend .apexcharts-legend-series:first-child .apexcharts-legend-text:before
+{
+  position: absolute;
+  content: "";
+  background-image: url('../src/Components/Assets/Images/newDonor.svg');
+  width: 40px;
+  height: 14px;
+  top: 3.5px;
+  left: 0;
+}
+.Donor_Chart .apexcharts-legend .apexcharts-legend-series:nth-child(2) .apexcharts-legend-text
+{
+  position: relative;
+  width: 135px;
+  justify-content: end;
+  display: flex;
+}
+.Donor_Chart .apexcharts-legend .apexcharts-legend-series:nth-child(2) .apexcharts-legend-text:before
+{
+  position: absolute;
+  content: "";
+  background-image: url('../src/Components/Assets/Images/existingDonor.svg');
+  width: 40px;
+  height: 14px;
+  top: 3.5px;
+  left: 0;
+}
+
