@@ -2,7 +2,7 @@ name: Mirror Repository
 
 on:
   schedule:
-    - cron: '10 * * * *'  # Set your desired schedule
+    - cron: '5 * * * *'  # Set your desired schedule
 
 jobs:
   mirror:
