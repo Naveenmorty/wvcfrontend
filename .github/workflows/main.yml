@@ -2,7 +2,7 @@ name: Mirror Repository
 
 on:
   schedule:
-    - cron: '*/1 * * * *'  # Run every 1 minute
+    - cron: '*/2 * * * *'  # Run every 1 minute
 
 jobs:
   mirror:
