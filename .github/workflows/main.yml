@@ -1,0 +1,32 @@
+name: Push to Another Repo
+
+on:
+  push:
+    branches:
+      - master  # Change this to the branch you want to trigger the workflow on
+
+jobs:
+  push_to_another_repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v2
+        with:
+          repository: Naveenmorty/wvcfrontend
+          ref: master
+
+      - name: Configure Git
+        run: |
+          git config user.name "Naveenmorty"
+          git config user.email "naveenkumar1297g@gmail.com"
+          git config credential.helper "store"
+          echo "https://Naveenmorty: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@github.com" > ~/.git-credentials
+
+      - name: Push to destination repository
+        run: |
+          git config user.name "Naveenmorty"
+          git config user.email "naveenkumar1297g@gmail.com"
+          git config credential.helper "store"
+          git remote add destination_repo https://Naveenmorty:${{ secrets.REPO_NAME }}@github.com/Naveenmorty/github-hook.git
+          git push destination_repo master
