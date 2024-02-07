@@ -21,7 +21,7 @@ jobs:
         run: |
           git fetch --prune --tags
           git pull origin master  # Change 'main' to your branch name
-
+          ls
       - name: Push to mirror repository
         run: |
           git remote add mirror https://Naveenmorty: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@github.com/Naveenmorty/githubaction.git
