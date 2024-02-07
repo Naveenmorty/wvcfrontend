@@ -1,32 +1,30 @@
-name: Push to Another Repo
+name: Mirror Repository
 
 on:
-  push:
-    branches:
-      - master  # Change this to the branch you want to trigger the workflow on
+  schedule:
+    - cron: '0 * * * *'  # Set your desired schedule
 
 jobs:
-  push_to_another_repo:
+  mirror:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source repository
-        uses: actions/checkout@v3
-        with:
-          repository: Naveenmorty/wvcfrontend
-          ref: master
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Configure Git
+      - name: Set up Git
         run: |
-          git config user.name "Naveenmorty"
-          git config user.email "naveenkumar1297g@gmail.com"
-          git config credential.helper "store"
-          echo "https://Naveenmorty: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@github.com" > ~/.git-credentials
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
 
-      - name: Push to destination repository
+      - name: Fetch changes
         run: |
-          git config user.name "Naveenmorty"
-          git config user.email "naveenkumar1297g@gmail.com"
-          git config credential.helper "store"
-          git remote add destination_repo https://Naveenmorty:${{ secrets.GIT_ACTIONS_PUSH }}@github.com/Naveenmorty/githubaction.git
-          git push destination_repo master
+          git fetch --prune --tags
+          git pull origin master  # Change 'main' to your branch name
+
+      - name: Push to mirror repository
+        run: |
+          git remote add mirror https://github.com/Naveenmorty/githubaction.git
+          git push mirror master  # Change 'main' to your branch name
+        env:
+          GH_TOKEN: ${{ secrets.REPO_NAME }}
