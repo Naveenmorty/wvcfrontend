@@ -27,4 +27,4 @@ jobs:
           git remote add mirror https://Naveenmorty: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@github.com/Naveenmorty/githubaction.git
           git push mirror master  # Change 'main' to your branch name
         env:
-          GH_TOKEN: ${{ secrets.REPO_NAME }}
+          GH_TOKEN: ${{ secrets.GIT_TOKEN }}
